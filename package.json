@@ -1,0 +1,26 @@
+{
+  "name": "t3rn-typescript-challenge",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "demo"
+  ],
+  "devDependencies": {
+    "lerna": "^6.0.3",
+    "typescript": "^4.9.3"
+  },
+  "version": "1.0.0",
+  "description": "a Polkadot block header light client to listen to new Polkadot headers, and store sequential batches of them inside a Merkle tree.",
+  "main": "index.js",
+  "repository": "https://github.com/solchef/PolkadotBlockHeaderClientSDK.git",
+  "author": "jchege <jawiwy@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@polkadot/api": "^9.9.1",
+    "@polkadot/rpc-provider": "^9.9.1",
+    "add": "^2.0.6",
+    "snarkyjs": "^0.7.1",
+    "ts-node": "^10.9.1",
+    "yarn": "^1.22.19"
+  }
+}
