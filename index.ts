@@ -1,8 +1,4 @@
 // import { ConnectionListener } from "./src/lib";
-import { MerkleTree,MerkleTypes } from './src/merkletree';
+import { MerkleTree, MerkleTypes } from "./src/merkletree";
 
-export {
-  MerkleTree,
-  MerkleTypes
-}
-  
+export { MerkleTree, MerkleTypes };

@@ -1,4 +1,3 @@
-
 // const chai = require('chai')
 // import { expect, assert } from 'chai';
 // import { describe, it, before, teardown, Test } from 'mocha';
@@ -11,10 +10,9 @@
 //     hashLeaf,
 // } from "../MerkleTree";
 
-
 // import { MerkleTreeVerifierContract } from '../build/wrappers/merkle_tree_verifier';
 
-// import { 
+// import {
 //     GanacheTestchain, TestTreeFactory, hexify, keccak256, waitUntilConnected, prefix0x, getDeployArgs
 // } from './helpers'
 
@@ -25,16 +23,11 @@
 // let $web3 = require('web3')
 // const AbiCoder = require('web3-eth-abi').AbiCoder();
 
-
-
-
-
 // function dehexify(str: string): Buffer {
 //     // begins with 0x
 //     if(str[1] == 'x') str = str.slice(2);
 //     return Buffer.from(str, 'hex')
 // }
-
 
 // describe('Solidity verifier', function() {
 //     this.timeout(15000)
@@ -47,23 +40,23 @@
 //     before(async () => {
 //         const port = '9546';
 //         let chain = GanacheTestchain.start(port);
-        
+
 //         let pe2 = new Web3ProviderEngine();
 //         pe2.addProvider(new RPCSubprovider(`http://127.0.0.1:${port}`))
 //         pe2.start()
 
 //         web3 = new Web3Wrapper(pe2);
 //         expect(waitUntilConnected(pe2), "didn't connect to chain").to.eventually.be.fulfilled;
-        
+
 //         accounts = await web3.getAvailableAddressesAsync();
 
 //         // Now we add tracing in.
 //         const artifactAdapter = new TruffleArtifactAdapter(
-//             require('path').dirname(require.resolve('../../package.json')), 
+//             require('path').dirname(require.resolve('../../package.json')),
 //             '0.5.0'
 //         );
 //         const revertTraceSubprovider = new RevertTraceSubprovider(
-//             artifactAdapter, 
+//             artifactAdapter,
 //             accounts[0],
 //             true
 //         );
@@ -73,7 +66,7 @@
 //         pe.addProvider(new RPCSubprovider(`http://127.0.0.1:${port}`))
 //         pe.start()
 //         expect(waitUntilConnected(pe), "didn't connect to chain").to.eventually.be.fulfilled;
-        
+
 //         web3 = new Web3Wrapper(pe);
 
 //         merkleTreeVerifier = await MerkleTreeVerifierContract.deployAsync(
@@ -153,7 +146,7 @@
 //             ].map(item => AbiCoder.encodeParameter('uint256', item))
 
 //             expect(itemSolEncoded.length).to.eq(8)
-            
+
 //             let itemsBuf = itemSolEncoded.map(dehexify)
 //             let layerJs = makeMockLayer(itemsBuf)
 
@@ -170,7 +163,7 @@
 //             ].map(item => AbiCoder.encodeParameter('uint256', item))
 
 //             expect(itemSolEncoded.length).to.eq(4)
-            
+
 //             let itemsBuf = itemSolEncoded.map(dehexify)
 //             let layerJs = makeMockLayer(itemsBuf)
 
@@ -199,14 +192,14 @@
 //             let itemSolEncoded = [
 //                 '12',
 //             ].map(item => AbiCoder.encodeParameter('uint256', item))
-            
+
 //             let tree = new MerkleTree(itemSolEncoded.map(dehexify), keccak256);
 //             let rootJs = tree.root();
-    
+
 //             let rootSol = await merkleTreeVerifier._computeMerkleRoot.callAsync(
 //                 itemSolEncoded
 //             );
-    
+
 //             expect(rootSol).to.eq(hexify(rootJs));
 //         })
 
@@ -219,15 +212,15 @@
 //                 '542',
 //                 '33'
 //             ].map(item => AbiCoder.encodeParameter('uint256', item))
-            
+
 //             // let tree = new MerkleTree(itemSolEncoded.map(dehexify).map(x => hashLeaf(keccak256, x)), keccak256);
 //             let tree = new MerkleTree(itemSolEncoded.map(dehexify), keccak256);
 //             let rootJs = tree.root();
-    
+
 //             let rootSol = await merkleTreeVerifier._computeMerkleRoot.callAsync(
 //                 itemSolEncoded
 //             );
-    
+
 //             expect(rootSol).to.eq(hexify(rootJs));
 //         })
 
@@ -242,14 +235,14 @@
 //                 '151',
 //                 '22'
 //             ].map(item => AbiCoder.encodeParameter('uint256', item))
-            
+
 //             let tree = new MerkleTree(itemSolEncoded.map(dehexify), keccak256);
 //             let rootJs = tree.root();
-    
+
 //             let rootSol = await merkleTreeVerifier._computeMerkleRoot.callAsync(
 //                 itemSolEncoded
 //             );
-    
+
 //             expect(rootSol).to.eq(hexify(rootJs));
 //         })
 //     })
@@ -309,12 +302,12 @@
 //                 '25',
 //                 '42',
 //             ].map(item => AbiCoder.encodeParameter('uint256', item))
-            
+
 //             let tree = new MerkleTree(itemSolEncoded.map(dehexify), keccak256);
-            
+
 //             async function testProof(item, i) {
 //                 let proof = tree.generateProof(i)
-    
+
 //                 expect(
 //                     await merkleTreeVerifier._verify.callAsync(
 //                         proof.proofs.map(hexify),
@@ -340,12 +333,12 @@
 //                 '151',
 //                 '22'
 //             ].map(item => AbiCoder.encodeParameter('uint256', item))
-            
+
 //             let tree = new MerkleTree(itemSolEncoded.map(dehexify), keccak256);
-            
+
 //             async function testProof(item, i) {
 //                 let proof = tree.generateProof(i)
-    
+
 //                 expect(
 //                     await merkleTreeVerifier._verify.callAsync(
 //                         proof.proofs.map(hexify),
@@ -369,13 +362,12 @@
 //         let itemsBuffed = TestTreeFactory.itemsToBuffer(items);
 //         let i = 0
 //         let itemToProve = itemsBuffed[i];
-        
+
 //         let tree = TestTreeFactory.newTree(items)
 //         let leafToProve = tree.leaves[i]
 
-        
 //         let proof = tree.generateProof(i);
-        
+
 //         expect(tree.verifyProof(proof, leafToProve)).to.be.true;
 
 //         let root = await merkleTreeVerifier._computeRoot.callAsync(
@@ -383,19 +375,17 @@
 //             proof.paths,
 //             hexify(leafToProve)
 //         )
-        
+
 //         expect(root).to.eq(hexify(tree.layers[1][0]));
 //         expect(root).to.eq(hexify(tree.root()))
 
 //         let verify = await merkleTreeVerifier._verify.callAsync(
-//             proof.proofs.map(hexify), 
+//             proof.proofs.map(hexify),
 //             proof.paths,
-//             hexify(tree.root()), 
+//             hexify(tree.root()),
 //             hexify(leafToProve)
 //         )
 //         expect(verify).to.be.true;
 //     })
-
-
 
 // })
