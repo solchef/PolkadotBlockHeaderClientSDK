@@ -1,20 +1,17 @@
 {
+  
+  "ts-node": {
     "compilerOptions": {
-      "baseUrl": ".",
-  
-      "declaration": true,
-      "declarationMap": true,
-      "sourceMap": true,
-  
-      "strict": true,
-  
-      "skipLibCheck": true,
-  
-      "esModuleInterop": true,
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "target": "es2015",
-  
-      "composite": true
+      "module": "commonjs"
     }
-  }
+  },
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "outDir": "dist",
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+}
