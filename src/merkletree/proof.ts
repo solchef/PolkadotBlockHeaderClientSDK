@@ -14,18 +14,7 @@ export interface MerkleProof {
   engine: string
   size: number
 
-  /**
-   * Example of a Merkle tree showing the target leaf and the two intermediate hashes comprised in the trail of the proof:
-   * 
-   *        (rootHash)
-   *           /  \
-   *          ()   hash2
-   *         /  \
-   *     (leaf)  hash1
-   * 
-   * @returns the base64-encoded dot-separated concatenation of the hexadecimal hashes, the path, the engine and the size of the tree,
-   * eg. Base64('&lt;hash1&gt;&lt;hash2&gt;.11.sha-256.4')
-   */
+
   toString: () => string
 }
 

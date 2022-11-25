@@ -19,10 +19,8 @@ declare global {
 
 let subtle: SubtleCrypto
 if (typeof window !== 'undefined') {
-  /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-  const crypto = window.crypto || window.msCrypto! // eslint-disable-line @typescript-eslint/no-non-null-assertion
-  subtle = (crypto.subtle || crypto.webkitSubtle)! // eslint-disable-line @typescript-eslint/no-non-null-assertion
-  /* eslint-enable @typescript-eslint/strict-boolean-expressions */
+  const crypto = window.crypto || window.msCrypto! 
+  subtle = (crypto.subtle || crypto.webkitSubtle)! 
 }
 
 export const buildHashFunction = (engine: string, doubleHash = false): HashFunction => {
@@ -72,4 +70,4 @@ export const isCorrectHash = (h: Buffer, engine: string): boolean => {
  * @returns a sorted array of hashes
  */
 export const sortHashes = (input: Hashes): Hashes =>
-  input.concat().sort(Buffer.compare) // eslint-disable-line @typescript-eslint/unbound-method
+  input.concat().sort(Buffer.compare) 

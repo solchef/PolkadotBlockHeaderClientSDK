@@ -180,7 +180,6 @@ export class MerkleTree {
         return Promise.reject(new Error('empty tree'))
       }
       const leavesHex: Array<string> = json.leaves
-      /* eslint-enable @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument */
       await tree.addLeaves(false, ...leavesHex.map(_ => Buffer.from(_, 'hex')))
       return tree
     } catch (e) {
