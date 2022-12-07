@@ -7,7 +7,9 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
-    "outDir": "dist"
+    "outDir": "dist",
+    "strict": true,
+    "strictPropertyInitialization": false
   },
   "exclude": ["node_modules", "dist"]
 }

@@ -11,10 +11,8 @@
   ],
   "private": true,
   "scripts": {
-    "demo": "yarn ts-node demo/index.ts",
+    "demo": "yarn ts-node src/lib/index.ts",
     "build": "yarn generate:defs && yarn generate:meta",
-    "generate:defs": "ts-node --skip-project node_modules/.bin/polkadot-types-from-defs --package sample-polkadotjs-typegen/interfaces --input ./src/interfaces --endpoint ./edgeware.json",
-    "generate:meta": "ts-node --skip-project node_modules/.bin/polkadot-types-from-chain --package sample-polkadotjs-typegen/interfaces --endpoint ./edgeware.json --output ./src/interfaces",
     "lint": "tsc --noEmit --pretty",
     "prettier": "yarn prettier --write .",
     "prepare": "husky install"
@@ -23,9 +21,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "@polkadot/api": "^2.3.1",
-    "@polkadot/rpc-provider": "^9.9.1",
-    "@substrate/connect": "^0.7.17",
+    "@polkadot/api": "^9.10.1",
     "circomlib": "^2.0.5",
     "crypto": "^1.0.1",
     "crypto-js": "^4.1.1",
@@ -33,7 +29,6 @@
     "ts-utls": "^1.4.7"
   },
   "devDependencies": {
-    "@polkadot/typegen": "^2.3.1",
     "@types/crypto-js": "^4.1.1",
     "@types/node": "^18.11.9",
     "husky": "^8.0.2",
